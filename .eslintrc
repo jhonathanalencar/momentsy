@@ -4,5 +4,6 @@
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "ignorePatterns": ["*.js"]
 }

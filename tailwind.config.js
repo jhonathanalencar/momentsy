@@ -7,12 +7,29 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        momentsy: {
+          beige: '#ac7c59',
+          red: '#4b2428',
+          gray: {
+            900: '#141414',
+            700: '#333538',
+            400: '#7c7d7e',
+            100: '#F2F2F2',
+          },
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-merriweather-sans)'],
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        stripes:
+          'linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 12.5%, transparent 12.5%, transparent)',
+      },
+      backgroundSize: {
+        stripes: '100% 8px',
       },
     },
   },
   plugins: [],
-}
+};
