@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        desktop: '1440px',
+      },
       colors: {
         momentsy: {
           beige: '#ac7c59',
