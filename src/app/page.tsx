@@ -24,8 +24,7 @@ export default function Home() {
               <span>Entrar com o Google</span>
             </button>
           </div>
-          <footer className="flex w-full items-center gap-2">
-            <span className="text-base font-semibold">Feito por</span>
+          <footer className="flex w-full">
             <div
               className="rounded-full bg-momentsy-red px-2.5 py-2 duration-75 hover:scale-125"
               title="Jhonathan Alencar"
