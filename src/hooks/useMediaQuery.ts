@@ -2,23 +2,28 @@ import { useEffect, useState } from 'react';
 
 export function useMediaQuery(query: string) {
   function getMatches(query: string) {
-    return window.matchMedia(query).matches;
+    if (typeof window !== 'undefined') {
+      return window.matchMedia(query).matches;
+    }
+
+    return false;
   }
 
   const [matches, setMatches] = useState(() => getMatches(query));
 
+  function handleMediaChange() {
+    setMatches(getMatches(query));
+  }
+
   useEffect(() => {
-    const media = window.matchMedia(query);
+    const matchMedia = window.matchMedia(query);
 
-    function handleMediaChange() {
-      setMatches(getMatches(query));
-    }
-
-    media.addEventListener('change', handleMediaChange);
+    matchMedia.addEventListener('change', handleMediaChange);
 
     return () => {
-      media.removeEventListener('change', handleMediaChange);
+      matchMedia.removeEventListener('change', handleMediaChange);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return matches;
